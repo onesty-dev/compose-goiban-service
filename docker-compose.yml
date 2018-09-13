@@ -6,6 +6,7 @@ services:
     ports:
       - "12346:8080"
     container_name: goiban
+    restart: unless-stopped
     networks: 
       - goiban
     depends_on: 
@@ -13,6 +14,8 @@ services:
 
   phpmyadmin_goiban:
     image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_goiban
+    restart: unless-stopped
     environment: 
       - PMA_PORT=3306
       - PMA_HOST=mysql_goiban
@@ -29,6 +32,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=goiban
     container_name: mysql_goiban
+    restart: unless-stopped
     networks: 
       - goiban
     volumes: 
