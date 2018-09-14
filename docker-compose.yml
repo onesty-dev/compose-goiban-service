@@ -20,7 +20,7 @@ services:
       - PMA_PORT=3306
       - PMA_HOST=mysql_goiban
     ports: 
-      - 18080:80
+      - 38080:80
     depends_on: 
       - mysql_goiban
     networks: 
