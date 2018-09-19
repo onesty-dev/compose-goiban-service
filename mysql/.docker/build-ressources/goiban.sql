@@ -53,6 +53,14 @@ INSERT INTO `BANK_DATA` VALUES (1,'1','10000000','Bundesbank','10591','Berlin','
 UNLOCK TABLES;
 
 --
+-- Tabellenstruktur für Tabelle `hibernate_sequence`
+--
+
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `DATA_SOURCE`
 --
 

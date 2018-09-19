@@ -11,6 +11,14 @@ services:
       - goiban
     depends_on: 
       - mysql_goiban
+    
+  goiban_data_loader:
+    image: registry.onesty-dev.de/goibandataloader:latest
+    restart: unless-stopped
+    networks: 
+      - goiban
+    depends_on: 
+      - mysql_goiban
 
   phpmyadmin_goiban:
     image: phpmyadmin/phpmyadmin:latest
