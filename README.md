@@ -1,2 +1,2 @@
 # compose-goiban-service
-Docker compose for goiban data laoder.
+Docker compose for goiban data loader.
