@@ -9,5 +9,5 @@ Place the excel file into /var/lib/docker/volumes/goiban-service_goiban_data/_da
 The data loader container can be configured by the following environment variables:
 
 * EXCEL_TO_DATABASE_JOB_CRON (default 0 0 0 25 12 ?)
-* SPRING_DATASOURCE_URL (default jdbc:mysql://localhost:3306/goiban)
+* SPRING_DATASOURCE_URL (default jdbc:mysql://localhost:3306/goiban?autoReconnect=true&useSSL=false)
 * EXCEL_FILE_DELETE (default true)
