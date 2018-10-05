@@ -13,7 +13,7 @@ services:
       - mysql_goiban
 
   goiban_data_loader:
-    image: onesty/goibandataloader:0.0.1
+    image: onesty/goibandataloader:0.0.2
     container_name: goiban_data_loader
     restart: unless-stopped
     networks: 
@@ -26,6 +26,8 @@ services:
       - EXCEL_TO_DATABASE_JOB_CRON=0 0/5 * * * ?
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_goiban:3306/goiban
       - EXCEL_FILE_DELETE=false
+      - EXCEL_LIST_DISTINCT=true
+      - EXCEL_LIST_HACK=true
 
   phpmyadmin_goiban:
     image: phpmyadmin/phpmyadmin:latest
