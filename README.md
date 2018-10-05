@@ -1,7 +1,7 @@
 # compose-goiban-service
 
 This is a docker-compose file that runs a complete environment for the goiban service by [fourcube](https://github.com/fourcube).
-It's starting a MySQL container, a phpmyadmin container the [goiban container](https://hub.docker.com/r/fourcube/openiban/) and a data [loader container](https://hub.docker.com/r/onesty/goibandataloader/).
+It's starting a MySQL container, a phpmyadmin container the [goiban container](https://hub.docker.com/r/fourcube/openiban/) and a [data loader container](https://hub.docker.com/r/onesty/goibandataloader/).
 
 It also loads a database initialisation script located at mysql/.docker/build-resources/goiban.sql
 
