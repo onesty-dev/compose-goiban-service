@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 
 services: 
   goiban:
@@ -11,14 +11,21 @@ services:
       - goiban
     depends_on: 
       - mysql_goiban
-    
+
   goiban_data_loader:
-    image: registry.onesty-dev.de/goibandataloader:latest
+    image: onesty/goibandataloader:0.0.1
+    container_name: goiban_data_loader
     restart: unless-stopped
     networks: 
       - goiban
     depends_on: 
       - mysql_goiban
+    volumes:
+      - goiban_data:/data
+    environment: 
+      - EXCEL_TO_DATABASE_JOB_CRON=0 0/5 * * * ?
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_goiban:3306/goiban
+      - EXCEL_FILE_DELETE=false
 
   phpmyadmin_goiban:
     image: phpmyadmin/phpmyadmin:latest
@@ -48,3 +55,6 @@ services:
 
 networks:
   goiban:
+
+volumes:
+  goiban_data:

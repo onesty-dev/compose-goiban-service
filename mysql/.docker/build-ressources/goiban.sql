@@ -39,7 +39,7 @@ CREATE TABLE `BANK_DATA` (
   KEY `bankcode_index` (`bankcode`),
   KEY `bic_index` (`bic`),
   KEY `source_id` (`source`)
-) ENGINE=MyISAM AUTO_INCREMENT=3668 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3668 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,6 +52,8 @@ INSERT INTO `BANK_DATA` VALUES (1,'1','10000000','Bundesbank','10591','Berlin','
 /*!40000 ALTER TABLE `BANK_DATA` ENABLE KEYS */;
 UNLOCK TABLES;
 
+-- --------------------------------------------------------
+
 --
 -- Tabellenstruktur für Tabelle `hibernate_sequence`
 --
@@ -59,6 +61,13 @@ UNLOCK TABLES;
 CREATE TABLE `hibernate_sequence` (
   `next_val` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `hibernate_sequence`
+--
+
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+(1);
 
 --
 -- Table structure for table `DATA_SOURCE`
@@ -72,7 +81,7 @@ CREATE TABLE `DATA_SOURCE` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +108,7 @@ CREATE TABLE `goose_db_version` (
   `tstamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
