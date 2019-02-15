@@ -1,0 +1,22 @@
+version: '3.6'
+
+services: 
+  goiban_data_loader:
+    image: onesty/goibandataloader
+    container_name: goiban_data_loader
+    restart: unless-stopped
+    volumes:
+      - goiban_data:/data
+    environment: 
+      - EXCEL_TO_DATABASE_JOB_CRON=0 0/5 * * * ?
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_goiban:3306/goiban?autoReconnect=true&useSSL=false
+      - EXCEL_LIST_DISTINCT=true
+      - EXCEL_LIST_HACK=true
+
+volumes:
+  goiban_data:
+
+networks: 
+  default: 
+    external:
+      name: goiban-service_goiban
