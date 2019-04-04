@@ -18,5 +18,5 @@ volumes:
 
 networks: 
   default: 
-    external:/5
+    external:
       name: goiban-service_goiban
