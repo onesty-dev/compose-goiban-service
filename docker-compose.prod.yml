@@ -12,6 +12,11 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_goiban:3306/goiban?autoReconnect=true&useSSL=false
       - EXCEL_LIST_DISTINCT=true
       - EXCEL_LIST_HACK=true
+    logging: 
+      driver: gelf
+      options: 
+            gelf-address: udp://localhost:12201
+            tag: pkvservice
 
 volumes:
   goiban_data:
